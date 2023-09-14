@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
-export default function Footer() {
-  return (
-    <Container>
-      <span>JStack's Blog. Todos os direitos reservados.</span>
-      <button type="button">🌞</button>
-    </Container>
-  );
+export default class Footer extends Component {
+  render() {
+    const { onToggleTheme, selectedTheme } = this.props;
+    return (
+      <Container>
+        <span>JStack's Blog. Todos os direitos reservados.</span>
+
+        <button type="button" onClick={onToggleTheme}>
+          {selectedTheme === "dark" ? "🌞" : "🌚"}
+        </button>
+      </Container>
+    );
+  }
 }
