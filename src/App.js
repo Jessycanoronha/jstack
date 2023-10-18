@@ -20,6 +20,7 @@ export default class App extends React.Component {
       this.setState(prevState => ({
         theme: prevState.theme === "dark" ? "light" : "dark",
     }));
+    this.forceUpdate();
   }
   render() {
     const { theme } = this.state;
